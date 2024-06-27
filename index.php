@@ -8,3 +8,32 @@ Aggiungere un secondo campo al form che permetta di filtrare gli hotel per voto 
 deve essere possibile utilizzare entrambi i filtri contemporaneamente (es. ottenere una lista con hotel che dispongono di parcheggio e
 che hanno un voto di tre stelle o superiore) Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gli hotel. -->
 
+<?php
+
+include_once __DIR__ . '/hotel.php';
+
+?>
+
+<ul>
+
+    <?php foreach ($hotels as $hotel) { ?>
+        <li>
+            <h1>
+                <?php echo $hotel['name']; ?>
+            </h1>
+
+            <h3>
+                <?php echo $hotel['description']; ?>
+            </h3>
+
+            <p>
+                <?php echo $hotel['vote']; ?> Stelle/a
+            </p>
+
+            <p>
+                Distanza dal centro: <?php echo $hotel['distance_to_center']; ?> Km
+            </p>
+        </li>
+    <?php } ?>
+
+</ul>
